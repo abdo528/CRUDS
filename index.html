@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUDS</title>
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+        integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container shadow p-5 my-5 rounded">
+        <h1 class="text-center mb-3">Product System</h1>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control border-0 border-bottom shadow-none" id="ProductName"
+                placeholder="ProductName" oninput="productNameValidation()">
+            <label for="ProductName">Product Name</label>
+            <p id="msgName" class=" alert alert-danger d-none">it must start with a letter, be 3 to 20 characters long,
+                and cant only contain letters, numbers or underscores</p>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control border-0 border-bottom shadow-none" id="ProductPrice"
+                placeholder="ProductPrice" oninput="productPriceValidation()">
+            <label for="ProductPrice">Product Price</label>
+            <p id="msgPrice" class=" alert alert-danger d-none">it should be a number with up to 10 digit before the
+                decimal point and up to 2 digit after the decimal (e.g., 100 , 49.99)</p>
+        </div>
+        <div class="form-floating mb-3">
+            <input list="options" type="text" class="form-control border-0 border-bottom shadow-none"
+                id="ProductCategory" placeholder="ProductCategory" oninput="productCategoryValidation()">
+            <label for="ProductCategory">Product Category</label>
+            <datalist id="options">
+                <option>TV</option>
+                <option>PC</option>
+                <option>Tablits</option>
+                <option>Mobiles</option>
+                <option>Electorinces</option>
+            </datalist>
+            <p id="msgCategory" class=" alert alert-danger d-none">In Valid Pattern</p>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="file" accept="image/*" class="form-control border-0 border-bottom shadow-none"
+                id="ProductImage" placeholder="ProductImage" onchange="productImageValidation()">
+            <label for="ProductImage">Product Image</label>
+            <p id="msgImage" class=" alert alert-danger d-none">In Valid Pattern</p>
+        </div>
+        <div class="form-floating mb-3">
+            <textarea class="form-control border-0 border-bottom shadow-none" placeholder="ProductDescreption"
+                id="ProductDescreption" style="height: 100px" oninput="productDescriptionValidation()"></textarea>
+            <label for="ProductDescreption">Product Descreption</label>
+            <p id="msgDescription" class=" alert alert-danger d-none">In Valid Pattern</p>
+        </div>
+        <button class="btn btn-outline-primary" id="Add">Add Product</button>
+    </div>
+    <div class="form-floating mb-5  w-50 m-auto">
+        <input oninput="searchProduct()" type="search" class="form-control border-0 border-bottom shadow-none"
+            id="ProductSearch" placeholder="ProductSearch">
+        <label for="ProductSearch">Search by product name</label>
+    </div>
+    <div class="container">
+        <div class="row g-3" id="rowBody">
+        </div>
+    </div>
+    <!-- bootstrap jd -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- js -->
+    <script src="script.js"></script>
+</body>
+
+</html>
